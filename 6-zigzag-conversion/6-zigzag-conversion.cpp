@@ -1,14 +1,12 @@
 class Solution {
 public:
     string convert(string s, int numRows) {
-        int row=0;
-        int len=s.length();
+        int l=s.length();
         if(numRows==1)return s;
-        if(numRows>=len)return s;
-        
+        if(numRows>=l)return s;
+        int row=0;
         int delta=-1;
         vector<char>res[numRows];
-        
         for(auto c:s)
         {
             res[row].push_back(c);
@@ -18,14 +16,14 @@ public:
             }
             row+=delta;
         }
-        string result="";
+        string t="";
         for(auto x:res)
         {
             for(auto y:x)
             {
-                result+=y;
+                t+=y;
             }
         }
-        return result;
+        return t;
     }
 };
