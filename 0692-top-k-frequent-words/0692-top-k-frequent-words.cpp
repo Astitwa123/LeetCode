@@ -11,13 +11,13 @@ class Solution{
         vector<string>ans;
         unordered_map<string,int>m;
         vector<pair<int,string>>a;
-        for(string &it:words)
+        for(auto it:words)
         {
             m[it]++;
         }
         for(auto kp:m)
         {
-            a.push_back(pair<int,string>{kp.second,kp.first});
+            a.push_back({kp.second,kp.first});
         }
         sort(a.begin(),a.end(),comp);
         while(k--){
