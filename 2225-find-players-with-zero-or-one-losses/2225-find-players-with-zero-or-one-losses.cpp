@@ -1,6 +1,6 @@
 class Solution {
 public:
-    static vector<vector<int>> findWinners(vector<vector<int>>& matches) {
+    vector<vector<int>> findWinners(vector<vector<int>>& matches) {
        unordered_set<int>win;
         unordered_map<int,int>loss;
         vector<vector<int>>ans(2);
