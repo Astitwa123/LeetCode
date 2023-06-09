@@ -10,20 +10,19 @@ class Solution
     //from the source vertex S.
     vector <int> dijkstra(int V, vector<vector<int>> adj[], int S)
     {
+        vector<int>dist(V,1e9);
+        dist[S]=0;
         priority_queue<pair<int,int>,vector<pair<int,int>>,greater<pair<int,int>>>pq;
         pq.push({0,S});
-        vector<int>dist(V);
-        for(int i=0;i<V;i++)dist[i]=1e9;
-        dist[S]=0;
         while(!pq.empty())
         {
+            int w=pq.top().first;
             int node=pq.top().second;
-            int dis=pq.top().first;
             pq.pop();
             for(auto it:adj[node])
             {
                 int n=it[0];
-                int w=it[1];
+                int dis=it[1];
                 if(dist[n]>w+dis)
                 {
                     dist[n]=w+dis;
